@@ -30,9 +30,9 @@ body {
 
 .header {
     height: 200px;
-    background-color: rgb(75, 27, 27);
+    background-color: rgba(50, 50, 50,.75);
     width: 100%;
-    
+    margin: 0;
 }
 
 
