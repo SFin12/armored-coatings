@@ -28,6 +28,13 @@ body {
     margin: auto;
 }
 
+.header {
+    height: 200px;
+    background-color: rgb(75, 27, 27);
+    width: 100%;
+    
+}
+
 
 
 
