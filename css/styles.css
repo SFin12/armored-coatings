@@ -1,0 +1,64 @@
+body {
+    background-color: black;
+    max-width: 2000px;
+    margin: auto;
+}
+
+.background {
+    background-image: url(../images/epoxy-hall.jpeg);
+    min-height: 800px;
+    background-size: cover;
+    background-color: grey;
+    margin: auto;
+}
+
+.jumbotron {
+    border-radius: 0%;
+}
+
+.title-font {
+    font-family: "Russo One", sans-serif;
+    font-size: 12vw;
+}
+
+.navbar {
+    background-color: slategrey;
+    color: black;
+
+    margin: auto;
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .title-font {
+        font-size: 7vw;
+    }
+
+    .background {
+        background-image: url(../images/epoxy-art.jpeg);
+        min-height: 1000px;
+    }
+}
+
+@media (min-width: 992px) {
+    .title-font {
+        font-size: 5vw;
+    }
+
+    
+}
+
+@media (min-width: 1800px) {
+    .title-font {
+        font-size: 4vw;
+    }
+  
+
+    .background {
+        background-image: url(../images/epoxy-art.jpeg);
+        min-height: 1400px;
+    }
+}
