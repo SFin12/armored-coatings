@@ -5,8 +5,8 @@ body {
 }
 
 .background {
-    background-image: url(../images/epoxy-hall.jpeg);
-    min-height: 800px;
+    background-image: url(../images/epoxy-art-mobile.jpeg);
+    min-height: 500px;
     background-size: cover;
     background-color: grey;
     margin: auto;
@@ -24,20 +24,26 @@ body {
 .navbar {
     background-color: slategrey;
     color: black;
-
+    font-size: 1.5rem;
     margin: auto;
 }
 
 .header {
-    height: 200px;
-    background-color: rgba(50, 50, 50,.75);
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    height: 25%;
+    background-color: rgba(50, 50, 50, 0.75);
     width: 100%;
-    margin: 0;
 }
 
+#logo {
+    margin: auto;
+}
 
-
-
+.phone {
+    margin: 10px 0px
+}
 
 @media (min-width: 768px) {
     .title-font {
@@ -54,15 +60,12 @@ body {
     .title-font {
         font-size: 5vw;
     }
-
-    
 }
 
 @media (min-width: 1800px) {
     .title-font {
         font-size: 4vw;
     }
-  
 
     .background {
         background-image: url(../images/epoxy-art.jpeg);
