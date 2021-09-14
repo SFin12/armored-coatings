@@ -54,6 +54,19 @@ body {
     margin: 10px 0px
 }
 
+#cost-estimate {
+    font-size: 1.5rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,.1);
+}
+
+#estimate {
+    width: fit-content;
+    word-wrap: none;
+}
+
+
+
 @media (min-width: 768px) {
     .title-font {
         font-size: 7vw;
@@ -69,6 +82,11 @@ body {
     .title-font {
         font-size: 5vw;
     }
+    .background {
+        background-image: url(../images/epoxy-art.jpeg);
+        min-height: 1200px;
+    }
+  
 }
 
 @media (min-width: 1800px) {
