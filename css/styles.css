@@ -65,6 +65,19 @@ body {
     word-wrap: none;
 }
 
+i {
+    margin-right: 10px;
+}
+
+#our-process {
+    width: auto;
+}
+
+.fa-check {
+    color: #17a2b8;
+    margin-right: 10px;
+}
+
 
 
 @media (min-width: 768px) {
@@ -73,8 +86,11 @@ body {
     }
 
     .background {
-        background-image: url(../images/epoxy-art.jpeg);
-        min-height: 1000px;
+        background-image: url(../images/epoxy-art-bright-long.jpeg);
+        min-height: 900px;
+    }
+    #our-process {
+        width: 30%;
     }
 }
 
@@ -83,8 +99,8 @@ body {
         font-size: 5vw;
     }
     .background {
-        background-image: url(../images/epoxy-art.jpeg);
-        min-height: 1200px;
+        background-image: url(../images/epoxy-art-bright-long.jpeg);
+        min-height: 1100px;
     }
   
 }
@@ -95,7 +111,7 @@ body {
     }
 
     .background {
-        background-image: url(../images/epoxy-art.jpeg);
-        min-height: 1400px;
+        background-image: url(../images/epoxy-art-desktop.jpeg);
+        min-height: 1350px;
     }
 }
