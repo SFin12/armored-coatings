@@ -31,9 +31,8 @@ $(function () {
 
 function getDistance(clientAreaCode) {
     // IMPORTANT: Fill in your client key
-    var clientKey =
-        "6SXj9OSpKkBtciDlD0YJIsvIh7ah0Ca8JJptrdePNyA4anUm1UBpyOYA9fMntLuL";
-    console.log("in getDistance. Cliant area code: " + clientAreaCode);
+    var clientKey ="6SXj9OSpKkBtciDlD0YJIsvIh7ah0Ca8JJptrdePNyA4anUm1UBpyOYA9fMntLuL";
+    console.log("in getDistance. Client area code: " + clientAreaCode);
     var cache = {};
     console.log(clientAreaCode);
     /** Handle successful response */
@@ -60,14 +59,21 @@ function getDistance(clientAreaCode) {
             console.log("data in cache");
         } else {
             // Build url
-            let url =
-                "https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" +
-                clientKey +
-                "/distance.json/" +
-                zipcode1 +
-                "/" +
-                zipcode2 +
-                "/mile";
+            // let url =
+            //     "https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/" +
+            //     clientKey +
+            //     "/distance.json/" +
+            //     zipcode1 +
+            //     "/" +
+            //     zipcode2 +
+            //     "/mile";
+			let key = "WS6EBKYR4NKOFY7B62B6"
+			let url = "https://cors-anywhere.herokuapp.com/https://api.zip-codes.com/ZipCodesAPI.svc/1.0/CalculateDistance/ByZip?fromzipcode="+
+				zipcode1+
+				"&tozipcode="+
+				zipcode2+
+				"&key="+
+				key;
 
 				fetch(url)
 				.then((response) => {
