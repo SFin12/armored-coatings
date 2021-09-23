@@ -1,6 +1,6 @@
 $(function () {
     $("#calculate").on("click", function () {
-        let dist = getDistance($("#area-code").val());
+        //let dist = getDistance($("#area-code").val());
 
         // if(dist < 15){
         //   dist = 0;
@@ -67,6 +67,9 @@ function getDistance(clientAreaCode) {
             //     "/" +
             //     zipcode2 +
             //     "/mile";
+
+
+
 			let key = "WS6EBKYR4NKOFY7B62B6"
 			let url = "https://cors-anywhere.herokuapp.com/https://api.zip-codes.com/ZipCodesAPI.svc/1.0/CalculateDistance/ByZip?fromzipcode="+
 				zipcode1+
@@ -74,14 +77,17 @@ function getDistance(clientAreaCode) {
 				zipcode2+
 				"&key="+
 				key;
-
-				fetch(url)
+			const encodedUrl = encodeURIComponent(url);
+				fetch(encodedUrl)
 				.then((response) => {
 				  return response.json();
 				})
 				.then((data) => {
 				  console.log(data);
 				});
+
+
+
 
             // Make AJAX request
             // 			$.ajax({
