@@ -1,5 +1,5 @@
 ---
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/lw2aoej5ednk/public_html/
-    - /bin/cp -R armored-coatings $DEPLOYPATH
+tasks:
+- export DEPLOYPATH=/home/lw2aoej5ednk/public_html #Add /<sub_folder> if required
+- /bin/cp -r * $DEPLOYPATH
