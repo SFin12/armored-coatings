@@ -24,7 +24,7 @@
   <nav class="navbar navbar-expand-md navbar-dark sticky-top order-1 bg-secondary">
     <div class="container-fluid d-flex justify-content-between align-items-start">
       <button role="button" type="button" id="cost-estimate" class="btn btn-info" data-toggle="modal"
-        data-target="#cost-calc">Quick Estimate</button>
+        data-target="#estimate-modal">Quick Estimate</button>
       <div class="navbar-item justify-content-end">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
           <span class="navbar-toggler-icon"></span>
@@ -49,8 +49,8 @@
     </div>
   </nav>
 
-
-  <div id="cost-calc" class="modal fade" role="dialog">
+<!-- Quick Estimate Modal -->
+  <div id="estimate-modal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header bg-info text-white">
@@ -61,42 +61,47 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <form>
+            <form id="estimate-form" action="#">
               <div class="row form-group">
-                <label for="epoxy-choice" class="col-sm-6 col-form-label">Epoxy Type</label>
+                <label for="name" class="col-sm-6 col-form-label">Name</label>
                 <div class="col">
-                  <select class="form-control" name="epoxy-choice" id="epoxy-type">
-                    <option value="Select...">
-                      Select...
-                    </option>
-                    <option value="8">Premium Flakes</option>
-                    <option value="7">Premium Clear</option>
-                    <option value="6">Standard Flakes</option>
-                    <option value="5">Standard Clear</option>
-                  </select>
+                  <input class="form-control" type="text" id="name" name="name" placeholder="Name" />
                 </div>
               </div>
               <div class="row form-group">
-                <label for="date" class="col-sm-6 col-form-label">Square Feet</label>
+                <label for="email" class="col-sm-6 col-form-label">Email</label>
+                <div class="col">
+                  <input class="form-control" type="email" id="email" name="email" placeholder="email" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label for="area" class="col-sm-6 col-form-label">Square Feet</label>
                 <div class="col">
                   <input class="form-control" type="number" step="10" id="area" name="area" placeholder="400"
                     value="400" />
                 </div>
               </div>
+              <div class="row form-group">
+                <label for="zipcode" class="col-sm-6 col-form-label">Area Code</label>
+                <div class="col">
+                  <input class="form-control" type="number" id="zipcode" name="zipcode" placeholder="95655"
+                     />
+                </div>
+              </div>
 
               <div class="row form-group">
-                <label class="col-sm-6 col-form-label" for="">Estimate</label>
+                <label class="col-sm-6 col-form-label" for="">Details / Questions</label>
 
-                <div class="col">
-                  <p type="text" name="estimate" id="estimate" class="text-dark form-control"></p>
+                <div class="col-md-12">
+                  <textarea class="form-control" style="width:100% ;" type="textarea" name="message" id="message"></textarea>
                 </div>
 
               </div>
           </div>
           <div class="row form-group">
             <div class="col">
-              <button type="button" class="btn btn-info" id="calculate">
-                Calculate
+              <button type="submit" class="btn btn-info" id="submit">
+                Submit
               </button>
               <button type="button" data-dismiss="modal" class="btn btn-secondary text-white">
                 Cancel
@@ -109,6 +114,25 @@
       </div>
     </div>
   </div>
+  <!-- End of Quick Estimate Modal -->
+  <!-- Email Success Modal -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="success-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h3 class="modal-title">Thank You!</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <h6>We'll get back to you with an estimate shortly. If you don't get an email from us soon, please check your spam folder.</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- End of Email Success Modal -->
   </div>
   <div class="container-fluid">
     <div class="row">
@@ -141,7 +165,7 @@
                     </div>
                     <div class="row justify-content-center">
                       <div class="col">
-                        <p class="text-light text-center fw-light h5" type="email" id="email"><a href="mailto:armoredcoatings.net" class="text-white"><i class="fas fa-envelope"
+                        <p class="text-light text-center fw-light h5" type="email" id="email"><a href="mailto:chris@armoredcoatings.net" class="text-white"><i class="fas fa-envelope"
                             type="email"></i>ArmoredCoatings.net</a></p>
                       </div>
                     </div>
@@ -297,11 +321,12 @@
       <div class="row mb-3">
         <div class="col text-center">
 
-          <p class="text-light fw-light h5" type="tel" id="phone"><a href="tel:+1-208-495-5152" class="text-white"><i class="fas fa-phone"></i>1(714)606-5820</a></p>
-          <p class="text-light fw-light h5" type="tel" id="phone"><a href="mailto:armoredcoatings.net" class="text-white"><i
+          <p class="text-light fw-light h5" type="tel" id="phone"><a href="tel:+1-208-495-5152" class="text-white"><i class="fas fa-phone"></i>(208)495-5152</a></p>
+          <p class="text-light fw-light h5" type="tel" id="phone"><a href="mailto:chris@armoredcoatings.net" class="text-white"><i
               class="fas fa-envelope"></i>ArmoredCoatings.net</a></p>
 
         </div>
+
 
       </div>
       <div class="row justify-content-around mb-5">
@@ -318,9 +343,8 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="js/script.js" type="text/javascript"></script>
-
-
 
 </body>
 
