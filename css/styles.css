@@ -7,7 +7,7 @@ body {
 
 .background {
     background-image: url(../images/epoxy-art-mobile.jpeg);
-    min-height: 600px;
+    min-height: 500px;
     background-size: cover;
     background-color: grey;
     margin: auto;
@@ -34,7 +34,7 @@ body {
     display: flex;
     margin-top: 10%;
     margin-bottom: 2%;
-    height: 25%;
+    height: 20%;
     background-color: rgba(50, 50, 50, 0.75);
     width: 100%;
     object-fit: contain;
@@ -43,10 +43,20 @@ body {
 .header-fade {
     display: block;
     position: absolute;
+    padding: 40% 10%;
     height: 150px;
     width: 100%;
     z-index: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)); */
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgb(255, 255, 255)
+    );
+    /* color: rgb(11, 67, 76); */
+    color: white;
+    font-size: 1.5rem;
     bottom: 0px !important;
 }
 
@@ -90,8 +100,8 @@ i {
 }
 
 .card-img-top {
-    object-fit: contain;
-    max-height: 400px;
+    /* object-fit: contain; */
+    max-height: 300px;
     background-color: black;
     border-radius: 0%;
 }
@@ -134,7 +144,8 @@ i {
 
     padding-bottom: 70px;
 }
-#contact-form {
+
+/* #contact-form {
     position: relative;
     color: #fff;
     font-family: sans-serif;
@@ -145,7 +156,7 @@ i {
     background-color: rgba($color: #ffff, $alpha: 0.3);
     backdrop-filter: blur(5px);
     margin-bottom: 20px;
-}
+} */
 
 input,
 textarea {
@@ -177,6 +188,21 @@ textarea {
 
     text-transform: uppercase;
     border-radius: 0 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 500px) {
+    .title-description {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 1000px) and (min-width: 768px) {
+    .img-fluid {
+        max-width: 75%;
+    }
+    .header {
+        margin-top: 5%;
+    }
 }
 
 @media (min-width: 768px) {
