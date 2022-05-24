@@ -10,19 +10,23 @@ $(function () {
             message: elements.message.value,
         };
         $("#estimate-form")[0].reset();
-        const distFunction = async () => await getDistance(clientInfo.zipcode);
+        $("#estimate-modal").modal("hide");
+        $("#success-modal").modal("show");
+
+        const distFunction = () => getDistance(clientInfo.zipcode);
         distFunction().then((dist) => {
             clientInfo.distance = dist;
-            emailjs.init("5yop65zQLl8k3ZyGw");
             emailjs
                 .send("service_vjbxv7w", "template_swf19ug", clientInfo) // use "service_gk1xtqk" for testing
                 .then(
                     function (response) {
                         console.log("SUCCESS!", response.status, response.text);
-                        $("#estimate-modal").modal("hide");
-                        $("#success-modal").modal("show");
+                        $("#loading-modal-body").hide();
+                        $("#success-modal-body").show();
                     },
                     function (error) {
+                        $("#estimate-modal").modal("hide");
+                        alert(error);
                         console.log("FAILED...", error);
                     }
                 );
@@ -54,10 +58,10 @@ $(function () {
         var zipcode2 = clientAreaCode.toString();
         if (zipcode1.length == 5 && zipcode2.length == 5) {
             // Check cache
-            console.log("ZIP CODES ARE CORRECT");
             var cacheKey = zipcode1 + "-" + zipcode2;
             if (cacheKey in cache) {
                 const dist = handleResp(cache[cacheKey]);
+                console.log("dist from cache:", dist);
                 return dist;
             } else {
                 // Build url
@@ -71,6 +75,7 @@ $(function () {
                     "/mile";
 
                 // Make AJAX request
+
                 const distance = await $.ajax({
                     url: url,
                     dataType: "json",
@@ -98,8 +103,11 @@ $(function () {
                         } else console.log("Request failed.");
                     });
                 console.log("end of AJAX");
+                console.log(distance);
                 return distance.distance;
             }
         }
     }
 });
+
+emailjs.init("5yop65zQLl8k3ZyGw");
