@@ -1,14 +1,13 @@
 {
-    "name": "nucamp",
+    "name": "armoredcoatings",
     "version": "1.0.0",
-    "description": "1st Portfolio Project",
-    "main": "templates/index.html",
+    "description": "armored coatings website",
+    "main": "index.html",
     "homepage": "https://sfin12.github.io/armored-coatings/",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "npm run lite",
-        "lite": "lite-server",
-        "deploy": "npm run build && gh-pages -d build"
+        "lite": "lite-server"
     },
     "author": "Sean Finegan",
     "license": "ISC",
