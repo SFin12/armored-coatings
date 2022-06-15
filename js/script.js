@@ -34,7 +34,7 @@ $(function () {
 
         return false;
     });
-
+    //user zipcode api to get general distance from business.
     async function getDistance(clientAreaCode) {
         // IMPORTANT: Fill in your client key
         var clientKey =

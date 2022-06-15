@@ -13,6 +13,12 @@ body {
     margin: auto;
 }
 
+#siteseal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 .jumbotron {
     border-radius: 0%;
     object-fit: contain;
@@ -210,6 +216,7 @@ li {
     }
 }
 
+/* just larger than ipads */
 @media (min-width: 768px) {
     .title-font {
         font-size: 7vw;
@@ -228,6 +235,7 @@ li {
     }
 }
 
+/* large screens */
 @media (min-width: 992px) {
     .title-font {
         font-size: 5vw;
@@ -249,6 +257,7 @@ li {
     }
 }
 
+/* full desktop screens */
 @media (min-width: 1800px) {
     .title-font {
         font-size: 4vw;
